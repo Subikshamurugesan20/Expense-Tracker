@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import '../Index.css';
 
 function Expenseform(props) {
-  const [title, setTitle] = useState('');
-  const [amount, setAmount] = useState('');
+  const [title,setTitle]=useState('');
+  const [amount,setAmount]=useState('');
 
   function handleTitlechange(e) {
     setTitle(e.target.value);
@@ -15,14 +15,16 @@ function Expenseform(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    props.addExpense(title, parseInt(amount));
+    props.addExpense(title,parseInt(amount));
     setTitle('');
     setAmount('');
   }
 
   return (
     <>
+
       <div className='expense-form'>
+
         <h3>Add Income/Expense</h3>
         <form onSubmit={handleSubmit}>
           <div className='form-group'>
@@ -53,3 +55,14 @@ function Expenseform(props) {
 }
 
 export default Expenseform;
+
+
+
+
+
+
+
+
+
+
+

@@ -1,12 +1,14 @@
 import React from 'react';
 
 function ExpenseItem(props) {
-  const { amount, title, id } = props.expense;
+  const {amount,title,_id }=props.expense;
   const type = amount > 0 ? "income" : "expense";
 
   function handleDelete() {
-    props.deleteExpense(id);
+    props.deleteExpense(_id);
   }
+  
+  
 
   return (
     <>
@@ -15,6 +17,7 @@ function ExpenseItem(props) {
         <div className='expense-amount'>{amount}</div>
         <div className='delete-button-overlay'>
           <button onClick={handleDelete}>Delete</button>
+         
         </div>
       </div>
     </>
@@ -22,3 +25,19 @@ function ExpenseItem(props) {
 }
 
 export default ExpenseItem;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

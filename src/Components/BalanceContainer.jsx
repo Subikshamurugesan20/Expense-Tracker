@@ -3,21 +3,22 @@ import '../Index.css';
 import CurrentItem from './CurrentItem';
 
 function BalanceContainer(props) {
-  const { expense } = props;
-  let income = 0;
-  let expenses = 0;
+  const {expense}=props;
+  let income=0;
+  let expenses=0;
 
   expense.forEach((item) => {
-    const { amount } = item;
-    if (amount > 0) {
-      income += parseInt(amount);
+    const {amount}=item;
+    if (amount>0) {
+      income+=parseInt(amount);
     } else {
-      expenses += parseInt(amount);
+      expenses+=parseInt(amount);
     }
   });
 
   return (
     <>
+        <h1>Expense Tracker</h1>
       <div className='balance-container'>
         <CurrentItem title="income" amount={income} type="income" />
         <CurrentItem title="expense" amount={expenses} type="expense" />
